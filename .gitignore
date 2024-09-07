@@ -1,0 +1,41 @@
+# Go binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go build directory
+/build/
+
+# Dependency directories
+/vendor/
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# IDE files
+.vscode/
+.idea/
+
+# Docker files
+*.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Environment files
+.env
+
+# Test coverage reports
+coverage.out
+*.cover
+
+# GoLand IDE files
+.idea/
+*.iml
