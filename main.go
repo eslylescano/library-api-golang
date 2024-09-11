@@ -18,7 +18,7 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	err = db.AutoMigrate(&models.Book{}, &models.Author{})
+	err = db.AutoMigrate(&models.Book{}, &models.Author{}, &models.Customer{})
 	if err != nil {
 		log.Fatalf("failed to migrate database: %v", err)
 	}
@@ -27,6 +27,7 @@ func main() {
 
 	routes.RegisterBookRoutes(r, db)
 	routes.RegisterAuthorRoutes(r, db)
+	routes.RegisterCustomerRoutes(r, db)
 
 	r.Run()
 }
