@@ -18,7 +18,7 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	err = db.AutoMigrate(&models.Book{})
+	err = db.AutoMigrate(&models.Book{}, &models.Author{})
 	if err != nil {
 		log.Fatalf("failed to migrate database: %v", err)
 	}
@@ -26,6 +26,7 @@ func main() {
 	r := gin.Default()
 
 	routes.RegisterBookRoutes(r, db)
+	routes.RegisterAuthorRoutes(r, db)
 
 	r.Run()
 }
